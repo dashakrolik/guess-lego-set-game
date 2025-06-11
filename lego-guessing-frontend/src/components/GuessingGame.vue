@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import backgroundImage from '../assets/blocks-background.png'
 
 interface LegoSet {
   name: string
@@ -40,8 +41,11 @@ onMounted(fetchSet)
 </script>
 
 <template>
-  <div class="container">
-    <h1>Lego Set Guessing Game</h1>
+<div class="container" :style="{ backgroundImage: `url(${backgroundImage})` }">
+<div class="header-bar">
+  <h1>LEGO SET GUESSING GAME</h1>
+</div>
+
 
     <div v-if="isLoading">Loading...</div>
 
@@ -57,7 +61,7 @@ onMounted(fetchSet)
 
       <form @submit.prevent="submitGuess" class="guess-form">
         <input class="input-enter-guess" v-model="guess" placeholder="Enter your guess" />
-        <button class="button yellow" style="color: white;" type="submit">Check</button>
+        <button class="button yellow" style="color: white;" type="submit">CHECK</button>
       </form>
 
       <div v-if="feedback === 'correct'" class="feedback correct">Correct!</div>
@@ -65,27 +69,36 @@ onMounted(fetchSet)
 
       <div class="grid-buttons">
         <button @click="showAnswer = !showAnswer" class="button">
-          {{ showAnswer ? 'Hide' : 'Show' }} Answer
+          {{ showAnswer ? 'HIDE' : 'SHOW' }} ANSWER
         </button>
-        <button @click="fetchSet" class="button">New Set</button>
+        <button @click="fetchSet" class="button">NEW SET</button>
       </div>
-
       <div v-if="showAnswer" class="answer">Answer: {{ set.name }}</div>
     </div>
   </div>
 </template>
 
 <style scoped>
+@media (min-width: 600px) {
+  .image-meta-wrapper {
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+  }
+}
+
 .container {
   max-width: 800px;
   width: 90%;
   min-height: 700px;
   margin: 40px auto;
   padding: 24px;
-  background: white;
-  border-radius: 20px;
-  border: 1px solid #f7d117;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  /* background-image: url('@/assets/blocks-background.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 16px;
+  /* border: 1px solid 	#FFD700; */
+  box-shadow: 0 8px 24px rgba(255, 234, 0, 0.08);
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-weight: 100;
@@ -94,13 +107,47 @@ onMounted(fetchSet)
   align-items: center;
   gap: 1.5rem;
 }
+.feedback,
+.answer {
+  transition: all 0.3s ease;
+}
+.header-bar {
+  background-color: #FFD700;
+  width: 100%;
+  margin-top: -24px; /* cancel container's padding */
+  margin-bottom: 8px;
+  padding: 24px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 2px solid -var(--lego-red);
+}
+
+.header-bar h1 {
+  margin: 0;
+  color: white;
+  font-family: "Rubik", monospace;
+  font-weight: 100;
+  font-size: 1.4rem;
+  letter-spacing: 0.06cap;
+}
+
+.divider {
+  margin-top: 8px;
+  height: 4px;
+  width: 80px;
+  background-color: #da291c; /* LEGO Red */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+}
+
 
 h1 {
-  color: #fd940a;
+  color: 	#FFD700;
   font-size: 1.8rem;
   margin: 0;
   font-weight: 100;
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", monospace;
 }
 
 h2 {
@@ -123,24 +170,37 @@ h2 {
 }
 
 .lego-image {
-  max-width: 220px;
+ max-width: 200px;
+  max-height: 200px;
+  width: auto;
   height: auto;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
 .meta {
-  min-width: 140px;
-  font-family: "Rubik", sans-serif;
-  font-weight: 100;
-  text-align: left;
-}
-
-.meta p {
-  margin: 0.25rem 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
+  padding-left: 4px;
+}
+.meta p {
+  margin: 0;
+  text-align: left;
+}
+.meta p strong {
+  display: inline-block;
+  min-width: 70px;
+  color: #201d48;
+  font-weight: 500;
 }
 
 .guess-form {
@@ -192,8 +252,19 @@ h2 {
 }
 
 .button.yellow {
-  background-color: #f7d117;
+  background-color: 	#FFD700;
   color: black;
+  width: 100%;
+  /* max-width: 180px; */
+  height: 48px;
+  border-radius: 28px;
+  transition: background 0.3s;
+}
+
+@media (min-width: 600px) {
+  .button.yellow {
+    max-width: 100%;
+  }
 }
 
 .button.yellow:hover {

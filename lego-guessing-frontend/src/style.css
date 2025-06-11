@@ -1,16 +1,16 @@
-@font-face {
+/* @font-face {
   font-family: 'Cera Pro';
   src: url('@/assets/Cera-Pro-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 :root {
   --lego-red: #da291c;
-  --lego-yellow: #f7d117;
+  --lego-yellow: #FFD700;
   --lego-blue: #0055bf;
   --gray-bg: #f4f4f4;
-  font-family: 'Cera Pro', sans-serif;
+
 }
 
 
@@ -19,7 +19,7 @@ body {
   padding: 0;
   background-color: var(--gray-bg);
   color: #222;
-  font-family: 'Cera Pro', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .container {
@@ -48,7 +48,7 @@ img {
   width: 100%;
   max-width: 300px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 button {

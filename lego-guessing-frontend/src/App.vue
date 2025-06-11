@@ -21,7 +21,7 @@ import GuessingGame from './components/GuessingGame.vue'
 
   background:
     linear-gradient(135deg, #201d48 0%, #201d48 30%, transparent 10%, transparent 100%),
-    linear-gradient(315deg, #ffd502 0%, #ffd502 30%, transparent 30%, transparent 100%),
+    linear-gradient(315deg, 	#FFD700 0%, 	#FFD700 30%, transparent 30%, transparent 100%),
     white;
 
   background-repeat: no-repeat;
