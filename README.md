@@ -1,6 +1,6 @@
-# LEGO Set Guessing Game – Frontend
+# LEGO Set Guessing Game
 
-A fun and interactive LEGO set guessing game built with Vue 3 + Vite. The game displays a LEGO set image along with some metadata, and the user has to guess the set name.
+A fun and interactive LEGO set guessing game built with Vue 3 + Vite on the frontend and Python and FastAPI on the backend. The game displays a LEGO set image along with some metadata, and the user has to guess the set name.
 
 ## What the game looks like <3
 
