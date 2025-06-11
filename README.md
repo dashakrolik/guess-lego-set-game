@@ -5,6 +5,7 @@ A fun and interactive LEGO set guessing game built with Vue 3 + Vite. The game d
 ## What the game looks like <3
 
 <img src="lego-guessing-frontend/src/assets/Screenshot%202025-06-11%20at%2016.33.49.png" width="600"/>
+<img src="lego-guessing-frontend/src/assets/Screenshot%202025-06-11%20at%2016.34.22.png" width="600"/>
 
 ## Features
 
