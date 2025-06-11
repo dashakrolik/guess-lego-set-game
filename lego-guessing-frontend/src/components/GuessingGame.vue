@@ -72,7 +72,7 @@ onMounted(fetchSet)
         </button>
 
         <button @click="fetchSet" class="new-btn">
-          🔄 New Set
+          New Set
         </button>
       </div>
 
@@ -83,7 +83,9 @@ onMounted(fetchSet)
 
 <style scoped>
 .container {
-  max-width: 600px;
+  max-width: 800px;
+  min-width: 70%;
+  min-height: 700px;
   margin: 40px auto;
   padding: 24px;
   background: white;
@@ -91,7 +93,8 @@ onMounted(fetchSet)
   border: 1px solid #f7d117;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   text-align: center;
-  font-family: monospace;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,25 +102,30 @@ onMounted(fetchSet)
 }
 
 h1 {
-  color: #da291c;
+  color: #fd940a;
   font-size: 1.8rem;
   margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
 }
 
 h2 {
   color: #333;
   font-size: 1.2rem;
   margin: 0;
+    font-weight: 100;
 }
 
 .lego-image {
   max-width: 240px;
+  max-height: 400px;
   border-radius: 6px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .meta p {
   margin: 0.25rem 0;
+    font-weight: 100;
 }
 
 .guess-form {
@@ -127,6 +135,8 @@ h2 {
   gap: 12px;
   flex-wrap: wrap;
   width: 360px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 100;
 }
 
 .input-enter-guess {
@@ -136,21 +146,24 @@ h2 {
   border: 1px solid #ccc;
   flex: 1 1 auto;
   height: 24px;
-  font-family: monospace;
+      font-family: "Rubik", sans-serif;
+    font-weight: 100;
+  font-weight: 100;
   min-width: 200px;
 }
 
 .btn-submit {
   background-color: #f7d117;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: none;
   padding: 0 24px;
   border-radius: 999px;
   width: 156px;
   cursor: pointer;
   height: 48px;
-  font-family: monospace;
+    font-family: "Rubik", sans-serif;
+    font-weight: 100;
   font-size: 1rem;
   transition: background 0.3s;
 }
@@ -178,18 +191,22 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 8px;
+      font-family: "Rubik", sans-serif;
+    font-weight: 100;
 }
 
 .reveal-btn,
 .new-btn {
-  background-color: #0055bf;
+  background-color: #201d48;
   color: white;
+  min-width: 160px;
   padding: 12px 20px;
   border-radius: 999px;
-  border: none;
-  font-weight: bold;
+  /* border: 1px solid #0055bf; */
+  /* font-weight: bold; */
   cursor: pointer;
-  font-family: monospace;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
   transition: background 0.3s;
   font-size: 1rem;
   height: 48px;
@@ -204,5 +221,7 @@ h2 {
   font-style: italic;
   color: #333;
   margin-top: 6px;
+      font-family: "Rubik", sans-serif;
+    font-weight: 100;
 }
 </style>

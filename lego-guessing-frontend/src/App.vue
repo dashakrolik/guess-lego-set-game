@@ -9,6 +9,9 @@ import GuessingGame from './components/GuessingGame.vue'
 </script>
 
 <style scoped>
+:global(body) {
+ font-family: 'Rubik', sans-serif;
+}
 .background {
   min-height: 100vh;
   display: flex;
@@ -23,6 +26,6 @@ import GuessingGame from './components/GuessingGame.vue'
 
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Rubik', sans-serif;
+ font-family: 'Rubik', sans-serif;
 }
 </style>
