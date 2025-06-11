@@ -81,8 +81,8 @@ onMounted(fetchSet)
 <style scoped>
 @media (min-width: 600px) {
   .image-meta-wrapper {
-    border-left: 1px solid #eee;
-    padding-left: 20px;
+    /* border-left: 1px solid #eee; */
+    /* padding-left: 20px; */
   }
 }
 
