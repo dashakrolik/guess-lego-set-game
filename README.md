@@ -2,9 +2,9 @@
 
 A fun and interactive LEGO set guessing game built with Vue 3 + Vite. The game displays a LEGO set image along with some metadata, and the user has to guess the set name.
 
-## 🎮 Screenshot
+## What the game looks like <3
 
-<img src="src/assets/Screenshot%202025-06-11%20at%2016.33.49.png" width="600"/>
+<img src="lego-guessing-frontend/src/assets/Screenshot%202025-06-11%20at%2016.33.49.png" width="600"/>
 
 ## Features
 
