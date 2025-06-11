@@ -41,7 +41,7 @@ onMounted(fetchSet)
 
 <template>
   <div class="container">
-    <h1>🧩 LEGO Set Guessing Game</h1>
+    <h1>Lego Set Guessing Game</h1>
     <h2>Guess the LEGO Set</h2>
 
     <div v-if="isLoading">Loading...</div>
