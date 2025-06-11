@@ -1,6 +1,5 @@
 <template>
-  <main class="container">
-    <h1>🧩 LEGO Set Guessing Game</h1>
+  <main class="background">
     <GuessingGame />
   </main>
 </template>
@@ -10,10 +9,20 @@ import GuessingGame from './components/GuessingGame.vue'
 </script>
 
 <style scoped>
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+.background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
-  font-family: sans-serif;
+
+  background:
+    linear-gradient(135deg, #201d48 0%, #201d48 30%, transparent 10%, transparent 100%),
+    linear-gradient(315deg, #ffd502 0%, #ffd502 30%, transparent 30%, transparent 100%),
+    white;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Rubik', sans-serif;
 }
 </style>

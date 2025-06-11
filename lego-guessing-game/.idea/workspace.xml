@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f1b717ea-1710-43b3-9c12-ccb5b4c9d46e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/_metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/.vite/deps/vue.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/fsevents.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/fsevents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/fsevents.node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lego-guessing-frontend/node_modules/fsevents/package.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +49,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.api_server.executor": "Debug",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -70,6 +80,7 @@
       <updated>1749116772288</updated>
       <workItem from="1749116773304" duration="5602000" />
       <workItem from="1749560945275" duration="925000" />
+      <workItem from="1749561877415" duration="2492000" />
     </task>
     <servers />
   </component>
@@ -78,6 +89,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/lego_guessing_game$main.coverage" NAME="main Coverage Results" MODIFIED="1749560794417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lego_guessing_game$api_server.coverage" NAME="api_server Coverage Results" MODIFIED="1749561896439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lego_guessing_game$lego_api.coverage" NAME="lego_api Coverage Results" MODIFIED="1749546518688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

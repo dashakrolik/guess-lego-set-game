@@ -33,4 +33,4 @@ def random_set():
 @app.post("/guess")
 def check_guess(data: GuessRequest):
     is_correct = data.guess.lower().strip() in data.answer.lower().strip()
-    return {"correct": is_correct}
+    return { "correct": is_correct }
