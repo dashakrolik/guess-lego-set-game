@@ -42,7 +42,6 @@ onMounted(fetchSet)
 <template>
   <div class="container">
     <h1>Lego Set Guessing Game</h1>
-    <h2>Guess the LEGO Set</h2>
 
     <div v-if="isLoading">Loading...</div>
 
@@ -58,19 +57,17 @@ onMounted(fetchSet)
 
       <form @submit.prevent="submitGuess" class="guess-form">
         <input class="input-enter-guess" v-model="guess" placeholder="Enter your guess" />
-        <button class="btn-submit" type="submit">Check</button>
+        <button class="button yellow" style="color: white;" type="submit">Check</button>
       </form>
 
       <div v-if="feedback === 'correct'" class="feedback correct">Correct!</div>
       <div v-else-if="feedback === 'wrong'" class="feedback wrong">Try again!</div>
 
       <div class="grid-buttons">
-        <button @click="showAnswer = !showAnswer" class="reveal-btn">
+        <button @click="showAnswer = !showAnswer" class="button">
           {{ showAnswer ? 'Hide' : 'Show' }} Answer
         </button>
-        <button @click="fetchSet" class="new-btn">
-          New Set
-        </button>
+        <button @click="fetchSet" class="button">New Set</button>
       </div>
 
       <div v-if="showAnswer" class="answer">Answer: {{ set.name }}</div>
@@ -98,94 +95,108 @@ onMounted(fetchSet)
   gap: 1.5rem;
 }
 
-h1, h2 {
-  font-family: "Rubik", sans-serif;
-  font-weight: 100;
-  margin: 0;
-}
-
 h1 {
   color: #fd940a;
   font-size: 1.8rem;
+  margin: 0;
+  font-weight: 100;
+  font-family: "Rubik", sans-serif;
 }
 
 h2 {
   color: #333;
   font-size: 1.2rem;
+  margin: 0;
+  font-weight: 100;
+  font-family: "Rubik", sans-serif;
 }
 
 .image-meta-wrapper {
   display: flex;
-  flex-direction: row;
-  gap: 1.2rem;
   justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 500px;
+  margin-bottom: 24px;
 }
 
 .lego-image {
-  max-width: 240px;
-  max-height: 400px;
-  border-radius: 6px;
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
 .meta {
-  text-align: left;
-  font-weight: 100;
+  min-width: 140px;
   font-family: "Rubik", sans-serif;
-  min-width: 180px;
+  font-weight: 100;
+  text-align: left;
 }
 
 .meta p {
   margin: 0.25rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .guess-form {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
   margin: 0 auto;
 }
-
 
 .input-enter-guess {
   padding: 12px 20px;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #ccc;
   font-family: "Rubik", sans-serif;
   font-weight: 100;
   flex: 1 1 auto;
   min-width: 200px;
   height: 48px;
+  box-sizing: border-box;
 }
 
-.btn-submit {
-  background-color: #f7d117;
+.button {
+  background-color: #201d48;
   color: white;
+  padding: 12px 20px;
+  border-radius: 28px;
   border: none;
-  padding: 12px;
-  border-radius: 12px;
-  width: 100%;
-  height: 48px;
+  font-size: 1rem;
   font-family: "Rubik", sans-serif;
   font-weight: 100;
-  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 180px;
+  height: 48px;
   box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
+.button:hover {
+  background-color: #003f94;
+}
 
-.btn-submit:hover {
+.button.yellow {
+  background-color: #f7d117;
+  color: black;
+}
+
+.button.yellow:hover {
   background-color: #ffe133;
 }
 
@@ -208,27 +219,8 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.reveal-btn,
-.new-btn {
-  background-color: #201d48;
-  color: white;
-  min-width: 160px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: none;
-  font-family: "Rubik", sans-serif;
-  font-weight: 100;
-  transition: background 0.3s;
-  font-size: 1rem;
-  height: 48px;
-  flex: 1 1 45%;
-}
-
-.reveal-btn:hover,
-.new-btn:hover {
-  background-color: #003f94;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 .answer {
@@ -239,7 +231,6 @@ h2 {
   font-weight: 100;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 600px) {
   .image-meta-wrapper {
     flex-direction: column;
@@ -249,14 +240,12 @@ h2 {
   .guess-form,
   .grid-buttons {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
   }
 
   .input-enter-guess,
-  .btn-submit,
-  .reveal-btn,
-  .new-btn {
-    width: 100%;
+  .button {
+    max-width: 100%;
   }
 
   .meta {
