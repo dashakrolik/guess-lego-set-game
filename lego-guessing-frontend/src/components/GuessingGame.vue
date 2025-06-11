@@ -47,36 +47,33 @@ onMounted(fetchSet)
     <div v-if="isLoading">Loading...</div>
 
     <div v-else-if="set">
-      <div style="display: flex; flex-direction: row;">
- <img :src="set.image_url" class="lego-image" alt="LEGO Set" />
-
-      <div class="meta">
-        <p><strong>Theme:</strong> {{ set.theme }}</p>
-        <p><strong>Year:</strong> {{ set.year }}</p>
-        <p><strong>Pieces:</strong> {{ set.pieces }}</p>
+      <div class="image-meta-wrapper">
+        <img :src="set.image_url" class="lego-image" alt="LEGO Set" />
+        <div class="meta">
+          <p><strong>Theme:</strong> {{ set.theme }}</p>
+          <p><strong>Year:</strong> {{ set.year }}</p>
+          <p><strong>Pieces:</strong> {{ set.pieces }}</p>
+        </div>
       </div>
-      </div>
-     
 
       <form @submit.prevent="submitGuess" class="guess-form">
         <input class="input-enter-guess" v-model="guess" placeholder="Enter your guess" />
         <button class="btn-submit" type="submit">Check</button>
       </form>
 
-      <div v-if="feedback === 'correct'" class="feedback correct">✅ Correct!</div>
-      <div v-else-if="feedback === 'wrong'" class="feedback wrong">❌ Try again!</div>
+      <div v-if="feedback === 'correct'" class="feedback correct">Correct!</div>
+      <div v-else-if="feedback === 'wrong'" class="feedback wrong">Try again!</div>
 
       <div class="grid-buttons">
         <button @click="showAnswer = !showAnswer" class="reveal-btn">
           {{ showAnswer ? 'Hide' : 'Show' }} Answer
         </button>
-
         <button @click="fetchSet" class="new-btn">
           New Set
         </button>
       </div>
 
-      <div v-if="showAnswer" class="answer">📦 Answer: {{ set.name }}</div>
+      <div v-if="showAnswer" class="answer">Answer: {{ set.name }}</div>
     </div>
   </div>
 </template>
@@ -84,7 +81,7 @@ onMounted(fetchSet)
 <style scoped>
 .container {
   max-width: 800px;
-  min-width: 70%;
+  width: 90%;
   min-height: 700px;
   margin: 40px auto;
   padding: 24px;
@@ -101,19 +98,29 @@ onMounted(fetchSet)
   gap: 1.5rem;
 }
 
+h1, h2 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
 h1 {
   color: #fd940a;
   font-size: 1.8rem;
-  margin: 0;
-  font-family: "Rubik", sans-serif;
-  font-weight: 100;
 }
 
 h2 {
   color: #333;
   font-size: 1.2rem;
-  margin: 0;
-    font-weight: 100;
+}
+
+.image-meta-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .lego-image {
@@ -121,52 +128,62 @@ h2 {
   max-height: 400px;
   border-radius: 6px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.meta {
+  text-align: left;
+  font-weight: 100;
+  font-family: "Rubik", sans-serif;
+  min-width: 180px;
 }
 
 .meta p {
   margin: 0.25rem 0;
-    font-weight: 100;
 }
 
 .guess-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
-  width: 360px;
-    font-family: "Rubik", sans-serif;
-    font-weight: 100;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
+
 
 .input-enter-guess {
   padding: 12px 20px;
   font-size: 1rem;
   border-radius: 10px;
   border: 1px solid #ccc;
-  flex: 1 1 auto;
-  height: 24px;
-      font-family: "Rubik", sans-serif;
-    font-weight: 100;
+  font-family: "Rubik", sans-serif;
   font-weight: 100;
+  flex: 1 1 auto;
   min-width: 200px;
+  height: 48px;
 }
 
 .btn-submit {
   background-color: #f7d117;
   color: white;
-  /* font-weight: bold; */
   border: none;
-  padding: 0 24px;
-  border-radius: 999px;
-  width: 156px;
-  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
   height: 48px;
-    font-family: "Rubik", sans-serif;
-    font-weight: 100;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
   font-size: 1rem;
-  transition: background 0.3s;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
 
 .btn-submit:hover {
   background-color: #ffe133;
@@ -190,9 +207,7 @@ h2 {
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 8px;
-      font-family: "Rubik", sans-serif;
-    font-weight: 100;
+  width: 100%;
 }
 
 .reveal-btn,
@@ -202,14 +217,13 @@ h2 {
   min-width: 160px;
   padding: 12px 20px;
   border-radius: 999px;
-  /* border: 1px solid #0055bf; */
-  /* font-weight: bold; */
-  cursor: pointer;
+  border: none;
   font-family: "Rubik", sans-serif;
   font-weight: 100;
   transition: background 0.3s;
   font-size: 1rem;
   height: 48px;
+  flex: 1 1 45%;
 }
 
 .reveal-btn:hover,
@@ -221,7 +235,32 @@ h2 {
   font-style: italic;
   color: #333;
   margin-top: 6px;
-      font-family: "Rubik", sans-serif;
-    font-weight: 100;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .image-meta-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guess-form,
+  .grid-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-enter-guess,
+  .btn-submit,
+  .reveal-btn,
+  .new-btn {
+    width: 100%;
+  }
+
+  .meta {
+    text-align: center;
+  }
 }
 </style>
